@@ -81,24 +81,6 @@ const Home = ({ data }) => {
           }
         }
       `}</style>
-
-      <style jsx global>{`
-        * {
-          box-sizing: border-box;
-        }
-
-        body,
-        figure {
-          margin: 0;
-        }
-
-        body {
-          background-color: #dcd6f7;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-      `}</style>
     </main>
   );
 };
