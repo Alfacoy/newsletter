@@ -1,4 +1,8 @@
+//Import Components
 import Head from "next/head";
+import Categories from "../Categories";
+
+//Import Style
 import style from "./style.scss";
 
 const Header = () => (
@@ -9,6 +13,8 @@ const Header = () => (
     </Head>
 
     <h1>Noticias del mundo</h1>
+
+    <Categories />
   </header>
 );
 

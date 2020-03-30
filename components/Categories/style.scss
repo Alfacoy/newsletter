@@ -1,0 +1,17 @@
+.categories {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+  background-color: var(--backgroundBoxDark);
+
+  a {
+    margin: 0 10px;
+    color: var(--colorTextLight);
+  }
+
+  a:hover {
+    color: var(--colorTextMid);
+  }
+}
