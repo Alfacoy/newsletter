@@ -1,5 +1,5 @@
 //Import Styles
-import style from "./style.scss";
+import style from "./style.module.scss";
 //Import Next/React
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ const Categories = () => {
     "ciencia",
     "tecnologia",
     "entretenimiento",
-    "deportes"
+    "deportes",
   ];
   const links = temas.map((i, index) => (
     <Link key={index} href="/categoria/[query]" as={`/categoria/${i}`}>

@@ -1,16 +1,11 @@
+//Import React/Next
+import { useRouter } from "next/router";
 //Import Components
-import Layout from "../../components/Layout";
+import Container from "../../components/Container";
 import TitlePage from "../../components/TitlePage";
 import CardList from "../../components/CardList";
 
-//Import Styles
-import style from "../../styles/styles.scss";
-
-//Import React/Next
-import fetch from "isomorphic-unfetch";
-import { useRouter } from "next/router";
-
-const ThePathIs = routhe => {
+const ThePathIs = (routhe) => {
   let ruth = "";
   switch (routhe) {
     case "economia":
@@ -42,20 +37,20 @@ const Category = ({ data }) => {
   const datos = data;
 
   return (
-    <Layout>
-      <section className={style.container}>
+    <Container>
+      <section className="container">
         <h1>{router.query.query.toUpperCase()}</h1>
         <TitlePage />
 
-        <article className={style.grid}>
+        <article className="grid">
           <CardList data={data.articles} />
         </article>
       </section>
-    </Layout>
+    </Container>
   );
 };
 
-Category.getInitialProps = async ctx => {
+Category.getInitialProps = async (ctx) => {
   const { query } = ctx.query;
   const cat = ThePathIs(query);
   const res = await fetch(
