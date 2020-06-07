@@ -34,6 +34,7 @@ const ThePathIs = (routhe) => {
 const Category = ({ data }) => {
   const router = useRouter();
 
+  console.log(data);
   return (
     <Container
       number={data.totalResults}
@@ -45,10 +46,11 @@ const Category = ({ data }) => {
 };
 
 Category.getInitialProps = async (ctx) => {
+  const API_KEY = process.env.API_KEY;
   const { query } = ctx.query;
   const cat = ThePathIs(query);
   const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?pageSize=100&category=${cat}&country=ar&apiKey=6f444439c3c04c9aacb89e02143b3057`
+    `https://newsapi.org/v2/top-headlines?category=${cat}&country=ar&apiKey=${API_KEY}`
   );
   const json = await res.json();
 

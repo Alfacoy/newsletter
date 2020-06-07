@@ -1,10 +1,10 @@
 //Import style
 import style from "./style.module.scss";
 
-const TitlePage = ({ number }) => {
+const TitlePage = () => {
   return (
     <div className={style.boxTitle}>
-      <h2>Noticias en Argentina [{number}]</h2>
+      <h2>Noticias en Argentina</h2>
     </div>
   );
 };
