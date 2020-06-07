@@ -1,17 +1,25 @@
 .categories {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-top: 20px;
-  background-color: var(--backgroundBoxDark);
+  margin: 0 auto 2rem auto;
 
   a {
-    margin: 0 10px;
+    padding: 0 0.5rem;
     color: var(--colorTextLight);
   }
 
-  a:hover {
-    color: var(--colorTextMid);
+  li {
+    border: 1px solid black;
+    padding: 0.3rem 0.2rem;
+    margin-top: 0.5rem;
+    background-color: var(--backgroundBoxDark);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .categories {
+    max-width: 800px;
   }
 }

@@ -1,24 +1,31 @@
-//Import Styles
-import style from "./style.module.scss";
 //Import Next/React
 import Link from "next/link";
+//Import Styles
+import style from "./style.module.scss";
 
 const Categories = () => {
   const temas = [
-    "economia",
+    "economía",
     "salud",
     "ciencia",
-    "tecnologia",
+    "tecnología",
     "entretenimiento",
     "deportes",
   ];
-  const links = temas.map((i, index) => (
-    <Link key={index} href="/categoria/[query]" as={`/categoria/${i}`}>
-      <a>{i[0].toUpperCase() + i.slice(1)}</a>
-    </Link>
+
+  const links = temas.map((tema, index) => (
+    <li key={index}>
+      <Link href="/categoria/[query]" as={`/categoria/${tema}`}>
+        <a>{tema[0].toUpperCase() + tema.slice(1)}</a>
+      </Link>
+    </li>
   ));
 
-  return <nav className={style.categories}>{links}</nav>;
+  return (
+    <nav>
+      <ul className={style.categories}>{links}</ul>
+    </nav>
+  );
 };
 
 export default Categories;
