@@ -1,26 +1,20 @@
 //Import component
 import Container from "../components/Container";
-import TitlePage from "../components/TitlePage";
 import CardList from "../components/CardList";
 
 const Home = ({ data }) => {
+  console.log(data);
   return (
-    <Container>
-      <section className="container">
-        <article>
-          <TitlePage />
-          <div className="grid">
-            {data ? <CardList data={data.articles} /> : "Loading..."}
-          </div>
-        </article>
-      </section>
+    <Container number={data.totalResults}>
+      {data ? <CardList data={data.articles} /> : "Loading..."}
     </Container>
   );
 };
 
-Home.getInitialProps = async (ctx) => {
+Home.getInitialProps = async () => {
+  const API_KEY = process.env.API_KEY;
   const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?category=health&country=ar&apiKey=6f444439c3c04c9aacb89e02143b3057`
+    `https://newsapi.org/v2/top-headlines?pageSize=100&category=health&country=ar&apiKey=${API_KEY}`
   );
   const json = await res.json();
   return { data: json };

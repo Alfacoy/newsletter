@@ -1,17 +1,22 @@
 //Import components
 import CustomHead from "../CustomHead";
+import TitlePage from "../TitlePage";
 import Header from "../Header";
 import Footer from "../Footer";
 //Import Style
 import style from "./style.module.scss";
 
-const Layout = ({ children }) => (
+const Container = ({ children, route, number }) => (
   <main>
     <CustomHead />
     <Header />
-    {children}
+    <section className={style.container}>
+      <TitlePage number={number} />
+      {route ? <h3 className={style.titleSection}>{route}</h3> : <></>}
+      <article className={style.grid}>{children}</article>
+    </section>
     <Footer />
   </main>
 );
 
-export default Layout;
+export default Container;

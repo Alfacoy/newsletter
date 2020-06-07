@@ -2,7 +2,6 @@
 import { useRouter } from "next/router";
 //Import Components
 import Container from "../../components/Container";
-import TitlePage from "../../components/TitlePage";
 import CardList from "../../components/CardList";
 
 const ThePathIs = (routhe) => {
@@ -34,18 +33,13 @@ const ThePathIs = (routhe) => {
 
 const Category = ({ data }) => {
   const router = useRouter();
-  const datos = data;
 
   return (
-    <Container>
-      <section className="container">
-        <h1>{router.query.query.toUpperCase()}</h1>
-        <TitlePage />
-
-        <article className="grid">
-          <CardList data={data.articles} />
-        </article>
-      </section>
+    <Container
+      number={data.totalResults}
+      route={router.query.query.toUpperCase()}
+    >
+      <CardList data={data.articles} />
     </Container>
   );
 };
@@ -54,7 +48,7 @@ Category.getInitialProps = async (ctx) => {
   const { query } = ctx.query;
   const cat = ThePathIs(query);
   const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?category=${cat}&country=ar&apiKey=6f444439c3c04c9aacb89e02143b3057`
+    `https://newsapi.org/v2/top-headlines?pageSize=100&category=${cat}&country=ar&apiKey=6f444439c3c04c9aacb89e02143b3057`
   );
   const json = await res.json();
 
