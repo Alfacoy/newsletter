@@ -33,13 +33,8 @@ const ThePathIs = (routhe) => {
 
 const Category = ({ data }) => {
   const router = useRouter();
-
-  console.log(data);
   return (
-    <Container
-      number={data.totalResults}
-      route={router.query.query.toUpperCase()}
-    >
+    <Container route={router.query.query.toUpperCase()}>
       <CardList data={data.articles} />
     </Container>
   );
