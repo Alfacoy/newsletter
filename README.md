@@ -1,30 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Noticiero Online
+## [Website](https://noticiero.now.sh/)
 
-## Getting Started
+### Descripción
+Es una web con noticias de distintos diarios del país. Poseé un menú que te permite moverte entre categorías.
 
-First, run the development server:
+### Actualizaciones
+- Se refactoreo el código desde cero, haciéndolo más cómodo para trabajar. Asi como también se hizo responsive el menú de categorías.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Se realiza un filtrado de noticias excluyendo a las que no traen imágenes. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Errores conocidos
+- Al iniciar o desplazarse entre categorías se nos muestra la pantalla de error, debido a que el .env de la API_KEY no es leída por el fetch. (Se soluciona refrescando el navegador).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Es común ver noticias similares entre categorías, como ciencia y deporte. 
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Tecnologías 
+Los datos son recolectados de [NewsApi](https://newsapi.org/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on ZEIT Now
-
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+La web está construida con [Next.js](https://nextjs.org/) y hosteada en [Vercel](https://vercel.com).
