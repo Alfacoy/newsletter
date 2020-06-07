@@ -4,7 +4,7 @@ import CardList from "../components/CardList";
 
 const Home = ({ data }) => {
   return (
-    <Container number={data.totalResults}>
+    <Container>
       {data ? <CardList data={data.articles} /> : "Loading..."}
     </Container>
   );
